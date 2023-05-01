@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+:root {
+    --my-padding:0.4rem;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: rgb(200, 237, 237);
+    font-size: 1.2rem;
+    font-family: 'Fredericka the Great', cursive;
+    height: 100vh;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 2fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+    "header menu menu menu"
+    "content1 content1 content1 content1"
+    "main main content2 content2"
+    "main main content3 content3"
+    "content4 content4 content4 content4";
+    text-align: center;
+    text-transform: uppercase;
+}
+.header{
+    align-items: center;
+    display: grid;
+    background-color: rgb(44, 115, 50);
+    grid-area: header;
+    padding: var(--my-padding);
+}
+.menu{
+    align-items: center;
+    display: grid;
+    background-color: rgb(110, 83, 123);
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+.content1{
+    align-items: center;
+    display: grid;
+    background-color: rgb(147, 144, 66);
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+.content2{
+    align-items: center;
+     display: grid;
+    background-color: rgb(148, 92, 148);
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+.content3{
+    align-items: center;
+    display: grid;
+    background-color: rgb(45, 109, 127);
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+main{
+    align-items: center;
+    background-color: rgb(106, 60, 90);
+    display: grid;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+.content4{
+    align-items: center;
+    display: grid;
+    background-color: rgb(84, 39, 36);
+    grid-area: content4;
+    padding: var(--my-padding);
+}
+@media(max-width:1024px){
+    .container{
+        grid-template-columns: 0.4fr 1fr 1fr;
+        grid-template-rows: 0.3fr 2fr 4fr 1.1fr 1.1fr;
+        grid-template-areas:
+        "header header header"
+        "content1 content1 content1"
+        "menu main main"
+        "menu content4 content4"
+        "menu content3 content2"
+        ;
+        }
+}
+
+@media(max-width:768px){
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 2fr 3fr 1.1fr 1.1fr 1.1fr;
+        grid-template-areas:
+        "header"
+        "menu"
+        "content1"
+        "main"
+        "content4"
+        "content3"
+        "content2"
+        ;
+    }
+}
